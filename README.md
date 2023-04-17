@@ -12,4 +12,4 @@ I want that every fresher coming in IIT BHU can use this website and I want from
 
 Video LInk-"https://drive.google.com/file/d/1sO7lhdYNHACuHib2gdSefSW5iQ9K1Jm9/view?usp=share_link".
 
-Deployed website Link-"https://reliable-mochi-56d99a.netlify.app/".
+Deployed website Link-"https://fabulous-bonbon-166fd4.netlify.app/".
