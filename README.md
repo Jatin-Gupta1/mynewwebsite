@@ -10,6 +10,6 @@ Also this includes various pictures of IIT BHU.
 
 I want that every fresher coming in IIT BHU can use this website and I want from the mentors to help me mto make this site more better.
 
-Video LInk-"https://drive.google.com/file/d/1sO7lhdYNHACuHib2gdSefSW5iQ9K1Jm9/view?usp=share_link".
+Video LInk-"https://drive.google.com/file/d/1sG5Xzajv7_Qd8s78qoZQv3G4YtNyqF1Y/view?usp=share_link".
 
 Deployed website Link-"https://fabulous-bonbon-166fd4.netlify.app/".
