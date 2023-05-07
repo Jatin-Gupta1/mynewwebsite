@@ -1,7 +1,7 @@
 
 
  :root {
-            --green: #ecfaec;
+            --light-green: #ecfaec;
             --dark-green: #165766;
 
 
@@ -9,7 +9,7 @@
 
 
 body {
-          background-color: var(--green);
+          background-color: var(--light-green);
         background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
         font: normal 16px/1.5 "Helvetica Neue", sans-serif;
         
@@ -33,7 +33,7 @@ body {
         font-family: 'Sintony', sans-serif;
         color: #e5e5e5;
         font-size: 12px;
-        background-color:var(--green);
+        background-color:var(--light-green);
         background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
         line-height: 1;
 }
@@ -81,7 +81,7 @@ color: cornsilk;
 }
 <!--  -->
 nav.menu {
-  background-color: var(--green);
+  background-color: var(--light-green);
   position: relative;
   min-height: 45px;
   height: 100%;
@@ -147,7 +147,7 @@ text-decoration:none;
 }
 
 .mega-menu {
-   background: none repeat scroll 0 0 var(--green);
+   background: none repeat scroll 0 0 var(--light-green);
     left: 0;
     margin-top: 3px;
     position: absolute;
@@ -284,7 +284,7 @@ margin-left: 5px;
 body {
   margin: 0;
   padding: 20px;
-  background-color: var(--green);
+  background-color: var(--light-green);
   background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
 }
 #slider {
@@ -343,7 +343,7 @@ body {
   animation-play-state: paused;
 }
 .introo{
-  background-color: var(--green);
+  background-color: var(--light-green);
   padding: 30px 0;
   display: flex;
   align-items: center;
@@ -443,7 +443,7 @@ body {
 
 
 .intro {
-     background-color: var(--green);
+     background-color: var(--light-green);
   padding: 30px 0;
   display: flex;
 align-items: center;
@@ -468,12 +468,12 @@ margin-right: auto;
 
 body{
   font: normal 16px/1.5 "Helvetica Neue", sans-serif;
-  background-color: var(--green);
+  background-color: var(--light-green);
   background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
 }
 
 .timeline ul {
-    background-color: var(--green);
+    background-color: var(--light-green);
     padding: 50px 0;
     background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
 }
