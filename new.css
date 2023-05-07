@@ -36,10 +36,10 @@ body {
         font-family: 'Sintony', sans-serif;
         color: #e5e5e5;
         font-size: 12px;
-        background: #bfbfbf;
+        background-color: var(--green);
+        background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
         line-height: 1;
-        background-image: url(https://img.freepik.com/free-vector/white-minimal-hexagons-background_79603-1453.jpg?size=626&ext=jpg&ga=GA1.2.1042453170.1681562234&semt=ais);
-      }
+}
       
   *, *:before, *:after {
     box-sizing: border-box;
@@ -287,7 +287,8 @@ margin-left: 5px;
 body {
   margin: 0;
   padding: 20px;
-  background-color: #f5f3f3;
+  background-color: var(--green);
+  background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
 }
 #slider {
   overflow: hidden;
@@ -473,6 +474,8 @@ border: 25px ridge rgb(255, 252, 252);
 
 body{
   font: normal 16px/1.5 "Helvetica Neue", sans-serif;
+  background-color: var(--green);
+        background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
 }
 
 .timeline ul {
