@@ -9,226 +9,268 @@
 <body>
     <style>
         :root {
-            --cover-timing: 0.5s;
-            --cover-ease: cubic-bezier(0.66, 0.08, 0.19, 0.97);
-            --cover-stagger: 0.15s;
-            --text-timing: .75s;
-            --text-stagger: 0.015s;
-            --text-ease: cubic-bezier(0.38, 0.26, 0.05, 1.07);
-            --title-stagger: 0.05s;
-            --highlight: white;
+            --green: #ecfaec;
+            --dark-green: #165766;
+            
+            
           }
-          
-          .card {
-            position: relative;
-            overflow: hidden;
-            aspect-ratio: 9/12;
+          body{
+            background-color: var(--green);
+          background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
+          }
+      
+        .container{
+            
+           
             display: flex;
-            flex-direction: column;
-            border-radius: 7px;
-            box-shadow: rgba(255, 255, 255, 0.3) 0 5vw 6vw -8vw, rgba(255, 255, 255, 0) 0 4.5vw 5vw -6vw, rgba(50, 50, 80, 0.5) 0px 4vw 8vw -2vw, rgba(0, 0, 0, 0.8) 0px 4vw 5vw -3vw;
-            transition: box-shadow 1s var(--cover-ease);
-          }
-          .card > * {
-            z-index: 2;
-          }
-          .card > img {
-            z-index: 0;
-            transition: all 0.8s cubic-bezier(0.66, 0.08, 0.19, 0.97);
-          }
-          .card::before, .card::after {
-            content: "";
-            width: 100%;
-            height: 50%;
-            top: 0;
-            left: 0;
-            background: rgba(27, 3, 3, 0.5);
-            position: absolute;
-            transform-origin: left;
-            transform: scaleX(0);
-            transition: all var(--cover-timing) var(--cover-ease);
-            z-index: 1;
-          }
-          .card::after {
-            transition-delay: var(--cover-stagger);
-            top: 50%;
-          }
-          .card:hover {
-            box-shadow: white 0 5vw 6vw -9vw, var(--highlight) 0 5.5vw 5vw -7.5vw, rgba(50, 50, 80, 0.5) 0px 4vw 8vw -2vw, rgba(0, 0, 0, 0.8) 0px 4vw 5vw -3vw;
-          }
-          .card:hover::before, .card:hover::after {
-            transform: scaleX(1);
-          }
-          .card:hover h2 .char, .card:hover p .word {
-            opacity: 1;
-            transform: translateY(0);
-            color: inherit;
-          }
-          .card:hover h2 .char {
-            transition-delay: calc(0.1s + var(--char-index) * var(--title-stagger));
-          }
-          .card:hover p .word {
-            transition-delay: calc(0.1s + var(--word-index) * var(--text-stagger));
-          }
-          .card:hover img {
-            transform: scale(1.1);
-          }
-          .card:nth-of-type(1) {
-            --highlight: coral;
-          }
-          .card:nth-of-type(2) {
-            --highlight: #56ffe5;
-          }
-          
-          .text {
-            position: absolute;
-            inset: 20px;
-            top: auto;
-          }
-          
-          h2 {
-            font-size: 30px;
-            font-size: clamp(20px, 4vw, 40px);
-            font-weight: 800;
-            margin-bottom: 0.2em;
-          }
-          
-          p {
-            font-size: 12px;
-            font-size: clamp(10px, 1.25vw, 14px);
-            line-height: 1.4;
-            text-align: justify;
-            margin-top: 0.2em;
-            margin-bottom: 0;
-          }
-          
-          h2 .char,
-          p .word {
-            color: var(--highlight);
-            display: inline-block;
-            opacity: 0;
-            position: relative;
-            transform: translateY(20px);
-            transition-property: transform, opacity, color;
-            transition-timing-function: var(--text-ease);
-            transition-duration: var(--text-timing), var(--text-timing), calc(var(--text-timing)*2);
-          }
-          
-          img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            -o-object-fit: cover;
-               object-fit: cover;
-            border-radius: 7px;
+            justify-content: center;
+            flex-wrap: wrap;
             
-          }
+        }
+        .card{
+            border: 1px solid var(--dark-green);
+            background: white;
+            width: 270px;
+           
+           margin: 10px;
+           border-radius: 5px;
           
-          main {
-            grid-template-columns: 1fr;
-            grid-template-rows: 60px;
-            grid-gap: 2em;
-          }
-          @media screen and (min-width: 600px) {
-            main {
-              grid-template-columns: 1fr 1fr;
-              grid-template-rows: -webkit-min-content 1fr;
-              grid-template-rows: min-content 1fr;
-            }
-          }
-          
-          .card {
-            width: 90vw;
-            max-width: 400px;
-          }
-          @media screen and (min-width: 600px) {
-            .card {
-              width: 40vw;
-            }
-          }
-          
-          h1 {
-            color: #5b6377;
-            font-weight: 100;
-          }
-          @media screen and (min-width: 600px) {
-            h1 {
-              grid-column: 1/3;
-            }
-          }
-          
-          body, main {
-            display: grid;
-            place-items: center;
-          }
-          
-          body, html {
-            color: white;
-            
-            padding: 0;
-            margin: 0;
-            min-height: 100vh;
-            font-family: "Open Sans", sans-serif;
-            background-image: url(https://img.freepik.com/free-vector/dark-hexagonal-background-with-gradient-color_79603-1410.jpg?size=626&ext=jpg&ga=GA1.2.1042453170.1681562234&semt=ais);
-          }
-          
-          body {
-            padding: 1em 0 3em;
-            min-height: calc(100vh - 4em);
-          }
-    </style>
-    <main id="main">
+
+        }
+        .card-image{
+            background-color: aqua;
+            height: 200px;
+            margin-bottom: 15px;
+            background-size: cover;
+            border-radius: 5px;
+           
+        }
         
-        <div class="card"><img src="https://pbs.twimg.com/media/FbS7v_kaIAAQw0o?format=jpg&name=4096x4096"/>
-          <div class="text">
-            <h2 data-splitting="">BHU Main Gate</h2>
-            <p data-splitting="">This is main gate of BANARAS HINDU UNIVERSITY which was built in 1940s.</p>
-          </div>
-        </div>
-        <div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Dept_of_Electrical_Engineering_IIT-BHU.jpg/2560px-Dept_of_Electrical_Engineering_IIT-BHU.jpg" alt="A City skyline at sunset"/>
-          <div class="text">
-            <h2 data-splitting="">Electrical Department</h2>
-            <p data-splitting="">It is one of the oldest and beautiful building of IIT BHU</p>
-          </div>
-        </div>
-        <div class="card"><img src="https://www.iitbhufoundation.org/wp-content/uploads/2022/11/62b9f06ec51d9183a8489b36_IMG_1753CROPPPED-scaled.jpeg" alt="A City skyline at sunset"/>
-            <div class="text">
-              <h2 data-splitting="">Shrinivas Deshpande Library</h2>
+        .card1{
+            background-image: url(https://almashines.s3.dualstack.ap-southeast-1.amazonaws.com/assets/images/gallary_photos/t1665991827_4GjIgDzrLM_thumb.jpg);
+        }
+        .card2{
+            background-image: url(https://feeds.abplive.com/onecms/images/uploaded-images/2022/05/11/90b8355eb1317cb2f4e0c1b8cd5bdce7_original.jpeg?impolicy=abp_cdn&imwidth=650);
+        }
+        .card3{
+            background-image: url(https://static.toiimg.com/thumb/resizemode-4,width-1280,height-720,msid-92530361/92530361.jpg);
+        }
+        .card4{
+            background-image: url(https://www.jagranimages.com/images/newimg/21032022/21_03_2022-iit_bhu_22560327.jpg);
+        }
+        .card5{
+            background-image: url(https://iitbhulife.files.wordpress.com/2016/05/pic8.jpg);
+        }
+        .card6{
+            background-image: url(https://www.iitbhu.ac.in/contents/cse/img/other/history.jpg);
+        }
+        .card7{
+            background-image: url(https://i.ytimg.com/vi/RDxu0BNvNWQ/maxresdefault.jpg);
+        }
+        .card8{
+            background-image: url(https://www.iitbhu.ac.in/contents/ece/img/other/history.jpg);
+        }
+        .card9{
+            background-image: url(https://prev.iitbhu.ac.in/sites/default/files/styles/iitbhu_slides/public/slides/mec/slide_mec_02.jpg?itok=9-Aaeetx);
             
+        }
+        .card10{
+            background-image: url(https://www.iitbhu.ac.in/sites/default/files/phy/img/other/history.jpg);
+        }
+        .card11{
+            background-image: url(https://www.iitbhu.ac.in/contents/civ/img/other/history.jpg);
+        }
+        .card12{
+            background-image: url(https://www.iitbhu.ac.in/contents/min/img/other/history.jpg);
+        }
+        .card13{
+            background-image: url(https://conferences.iitbhu.ac.in/metwaste/images/pic_dept.jpg);
+        }
+        .card14{
+            background-image: url(https://www.iitbhu.ac.in/contents/che/img/other/history.jpg)
+        }
+        .card15{
+            background-image: url(https://www.iitbhu.ac.in/contents/phe/img/other/history.png);
+        }
+        .card16{
+            background-image: url(https://www.iitbhu.ac.in/contents/bme/img/other/history.jpg);
+        }
+        .card17{
+            background-image: url(https://iitbhu.ac.in/contents/bce/img/slider/slider_01.jpg);
+        }
+        .card18{
+            background-image: url(https://pbs.twimg.com/media/FCmmHXNVEAU_CXv.jpg);
+        }
+        .card19{
+            background-image: url(https://www.iitbhu.ac.in/contents/hss/img/slider/slider_01.jpg);
+        }
+        .card20{
+            background-image: url(https://iitbhulife.files.wordpress.com/2019/06/64460643_2265718493511469_6885105516364693504_o-1.jpg?w=291&h=163);
+        }
+        h1{
+            padding:5px 10px;
+        }
+        p{
+            padding: 5px 10px;
+        }
+      
+        .card:hover{
+           
+           background-color: rgba(182, 184, 185, 0.619);
+            transform: scale(1.03);
+            transition: 0.5s;
+            cursor: pointer;
+        }
+    </style>
+    <div class="container">
+        <div class="card">
+            <div class="card-image card1">
             </div>
-          </div>
-          <div class="card"><img src="https://www.iitbhu.ac.in/contents/mec/img/other/history.jpg" alt="A City skyline at sunset"/>
-            <div class="text">
-              <h2 data-splitting="">Mechanical Department</h2>
-              <p data-splitting="">The Department of Mechanical Engineering came into existence in 1919 under the leadership of Professor Charles A. King</p>
+            <h1>bhu gate</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam recusandae eum accusamus id sapiente doloribus blanditiis commodi quae illum neque?</p>
+           
+
+        </div>
+        <div class="card">
+            <div class="card-image card2">
             </div>
-          </div>
-          <div class="card"><img src="https://kashibanaras.com/wp-content/uploads/2021/10/vishwanath-templevaranasi.jpg"/>
-            <div class="text">
-              <h2 data-splitting="">Vishwanath Temple</h2>
-              
+            <h1>electrical department</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam recusandae eum accusamus id sapiente doloribus blanditiis commodi quae illum neque?</p>
+            
+        </div>
+        <div class="card">
+            <div class="card-image card3">
             </div>
-          </div>
-          <div class="card"><img src="/resources image/WhatsApp Image 2023-04-15 at 22.06.06.jpg"/>
-            <div class="text">
-              <h2 data-splitting="">Department of Physics</h2>
-              
+            <h1>library</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam recusandae eum accusamus id sapiente doloribus blanditiis commodi quae illum neque?</p>
+            
+        </div>
+        <div class="card">
+            <div class="card-image card4">
             </div>
-          </div>
-          <div class="card"><img src="https://www.iitbhu.ac.in/contents/civ/img/other/history.jpg"/>
-            <div class="text">
-              <h2 data-splitting="">Civil Engineering</h2>
-              
+            <h1>iit board</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam recusandae eum accusamus id sapiente doloribus blanditiis commodi quae illum neque?</p>
+           
+        </div>
+        <div class="card">
+            <div class="card-image card5">
             </div>
-          </div>
-          <div class="card"><img src="https://www.iitbhu.ac.in/contents/institute/others/hostels/img/thumbnails/thumbnail_dhanrajgiri2.jpg"/>
-            <div class="text">
-              <h2 data-splitting="">Dharajgiri Hostel</h2>
-              
+            <h1>vishwanath temple</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam recusandae eum accusamus id sapiente doloribus blanditiis commodi quae illum neque?</p>
+            
+        </div>
+        <div class="card">
+            <div class="card-image card6">
             </div>
-          </div>
-          
-      </main>
+            <h1>Computer Science Department</h1>
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, impedit.</p>
+            
+        </div>
+        <div class="card">
+            <div class="card-image card7">
+            </div>
+            <h1>Mathematical Department</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam recusandae eum accusamus id sapiente doloribus blanditiis commodi quae illum neque?</p>
+            
+        </div>
+        <div class="card">
+            <div class="card-image card8">
+            </div>
+            <h1>Electronics Department</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam recusandae eum accusamus id sapiente doloribus blanditiis commodi quae illum neque?</p>
+            
+        </div>
+        <div class="card">
+            <div class="card-image card9">
+            </div>
+            <h1>Mechanical Department</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam recusandae eum accusamus id sapiente doloribus blanditiis commodi quae illum neque?</p>
+            
+        </div>
+        <div class="card">
+            <div class="card-image card10">
+            </div>
+            <h1> Physics Department</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam recusandae eum accusamus id sapiente doloribus blanditiis commodi quae illum neque?</p>
+            
+        </div>
+        <div class="card">
+            <div class="card-image card11">
+            </div>
+            <h1>civil Department</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam recusandae eum accusamus id sapiente doloribus blanditiis commodi quae illum neque?</p>
+            
+        </div>
+        <div class="card">
+            <div class="card-image card12">
+            </div>
+            <h1>Mining Department</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam recusandae eum accusamus id sapiente doloribus blanditiis commodi quae illum neque?</p>
+            
+        </div>
+        <div class="card">
+            <div class="card-image card13">
+            </div>
+            <h1>Metallurgy Department</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam recusandae eum accusamus id sapiente doloribus blanditiis commodi quae illum neque?</p>
+            
+        </div>
+        <div class="card">
+            <div class="card-image card14">
+            </div>
+            <h1>Chemical Department</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam recusandae eum accusamus id sapiente doloribus blanditiis commodi quae illum neque?</p>
+            
+        </div>
+        <div class="card">
+            <div class="card-image card15">
+            </div>
+            <h1>Pharmaceutical Department</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam recusandae eum accusamus id sapiente doloribus blanditiis commodi quae illum neque?</p>
+            
+        </div>
+        <div class="card">
+            <div class="card-image card16">
+            </div>
+            <h1>Biomedical Department</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam recusandae eum accusamus id sapiente doloribus blanditiis commodi quae illum neque?</p>
+            
+        </div>
+        <div class="card">
+            <div class="card-image card17">
+            </div>
+            <h1>Biochemical Department</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam recusandae eum accusamus id sapiente doloribus blanditiis commodi quae illum neque?</p>
+            
+        </div>
+        <div class="card">
+            <div class="card-image card18">
+            </div>
+            <h1>Dhanrajgiri Hostel</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam recusandae eum accusamus id sapiente doloribus blanditiis commodi quae illum neque?</p>
+            
+        </div>
+    
+    <div class="card">
+        <div class="card-image card19">
+        </div>
+        <h1>Humanistic Department</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam recusandae eum accusamus id sapiente doloribus blanditiis commodi quae illum neque?</p>
+        
+    </div>
+    
+    <div class="card">
+        <div class="card-image card20">
+        </div>
+        <h1>ABLT</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam recusandae eum accusamus id sapiente doloribus blanditiis commodi quae illum neque?</p>
+        
+    </div>
+    </div>
+    
+
+    <script>
+        
+    </script>
 </body>
 </html>
