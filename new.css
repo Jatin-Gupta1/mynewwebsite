@@ -83,7 +83,7 @@ color: cornsilk;
 nav.menu {
   background-color: var(--green);
   position: relative;
-  min-height: 55px;
+  min-height: 45px;
   height: 100%;
   text-align: center;
   
@@ -95,7 +95,7 @@ nav.menu {
   list-style: none;
   display: inline-block;
   color: #d50868;
-  line-height: 55px;
+  line-height: 45px;
   
 }
 .menu > ul li a, .xs-menu li a {
