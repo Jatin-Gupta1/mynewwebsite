@@ -20,6 +20,7 @@ body {
       }
 
       .iitimage{
+        margin-top:0px;
         width: 100%;
         margin-left: auto;
         margin-right: auto;
@@ -27,11 +28,7 @@ body {
         border-bottom-right-radius:  1rem;
         border-bottom: 5px solid #bc0b69 ;
       }
-      @media only screen and (max-width: 1200px) {
-      .iitimage {
-          /* width: 89%; */
-      }
-      }
+     
       body {
         font-family: 'Sintony', sans-serif;
         color: #e5e5e5;
@@ -86,7 +83,7 @@ color: cornsilk;
 nav.menu {
   background-color: var(--green);
   position: relative;
-  min-height: 45px;
+  min-height: 55px;
   height: 100%;
   text-align: center;
   
@@ -150,7 +147,7 @@ text-decoration:none;
 }
 
 .mega-menu {
-   background: none repeat scroll 0 0 #fff;
+   background: none repeat scroll 0 0 var(--green);
     left: 0;
     margin-top: 3px;
     position: absolute;
