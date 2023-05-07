@@ -9,7 +9,7 @@
 
 
 body {
-          background-color: var(--light-green);
+          background: var(--light-green);
         background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
         font: normal 16px/1.5 "Helvetica Neue", sans-serif;
         
