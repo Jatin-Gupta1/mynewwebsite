@@ -9,12 +9,21 @@
 </head>
 <body>
     <style>
+        
+ :root {
+            --green: #ecfaec;
+            --dark-green: #165766;
+
+
+          }
+        
         * {
             /* Change your font family */
             font-family: sans-serif;
         }
         body{
-            background-image: url(https://img.freepik.com/free-vector/gradient-white-background-with-wavy-lines_79603-2166.jpg?size=626&ext=jpg&ga=GA1.2.1042453170.1681562234&semt=ais);
+          background-color: var(--green);
+        background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
         }
         
         .content-table {
@@ -30,7 +39,7 @@
         }
         
         .content-table thead tr {
-            background-color:#bc0b69;
+            background-color:var(--dark-green);
             color: #ffffff;
             text-align: left;
             font-weight: bold;
@@ -50,12 +59,12 @@
         }
         
         .content-table tbody tr:last-of-type {
-            border-bottom: 2px solid #bc0b69;
+            border-bottom: 2px solid var(--dark-green);
         }
         
         .content-table tbody tr.active-row {
             font-weight: bold;
-            color:#bc0b69;
+            color:var(--dark-green);
         }
             
         .logo{
